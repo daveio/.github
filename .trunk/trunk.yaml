@@ -1,16 +1,23 @@
----
-version: 0.1
+actions:
+  definitions:
+    - description: Git LFS hooks
+      display_name: Git LFS
+      id: git-lfs
+      run: git lfs "${hook}" "${@}"
+      triggers:
+        - git_hooks:
+            - post-checkout
+            - post-commit
+            - post-merge
+            - pre-push
+  enabled:
+    - trunk-announce
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+    - trunk-upgrade-available
+    - git-lfs
 cli:
   version: 1.22.10
-plugins:
-  sources:
-    - id: trunk
-      ref: v1.6.7
-      uri: https://github.com/trunk-io/plugins
-runtimes:
-  enabled:
-    - node@18.20.5
-    - python@3.10.8
 lint:
   disabled:
     - renovate
@@ -21,21 +28,13 @@ lint:
     - prettier@3.5.3
     - trufflehog@3.88.15
     - yamllint@1.35.1
-actions:
+plugins:
+  sources:
+    - id: trunk
+      ref: v1.6.7
+      uri: https://github.com/trunk-io/plugins
+runtimes:
   enabled:
-    - trunk-announce
-    - trunk-check-pre-push
-    - trunk-fmt-pre-commit
-    - trunk-upgrade-available
-    - git-lfs
-  definitions:
-    - id: git-lfs
-      display_name: Git LFS
-      description: Git LFS hooks
-      run: git lfs "${hook}" "${@}"
-      triggers:
-        - git_hooks:
-            - post-checkout
-            - post-commit
-            - post-merge
-            - pre-push
+    - node@18.20.5
+    - python@3.10.8
+version: 0.1
