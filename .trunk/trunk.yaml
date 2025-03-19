@@ -8,6 +8,7 @@ cli:
   version: 1.22.10
 lint:
   disabled:
+    - cspell
     - renovate
   enabled:
     - checkov@3.2.382
