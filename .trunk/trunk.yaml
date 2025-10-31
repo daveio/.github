@@ -5,27 +5,27 @@ actions:
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
 cli:
-  version: 1.22.11
+  version: 1.25.0
 lint:
   disabled:
     - cspell
     - renovate
   enabled:
-    - actionlint@1.7.7
-    - checkov@3.2.392
+    - actionlint@1.7.8
+    - checkov@3.2.489
     - git-diff-check
-    - markdownlint@0.44.0
-    - prettier@3.5.3
-    - trufflehog@3.88.18
-    - yamllint@1.37.0
+    - markdownlint@0.45.0
+    - prettier@3.6.2
+    - trufflehog@3.90.12
+    - yamllint@1.37.1
 plugins:
   sources:
     - id: trunk
-      ref: v1.6.7
+      ref: v1.7.3
       uri: https://github.com/trunk-io/plugins
 runtimes:
   enabled:
-    - node@18.20.5
+    - node@22.16.0
     - python@3.10.8
 version: 0.1
 merge:
