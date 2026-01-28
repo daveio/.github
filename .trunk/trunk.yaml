@@ -11,17 +11,17 @@ lint:
     - cspell
     - renovate
   enabled:
-    - actionlint@1.7.8
-    - checkov@3.2.489
+    - actionlint@1.7.10
+    - checkov@3.2.499
     - git-diff-check
-    - markdownlint@0.45.0
-    - prettier@3.6.2
-    - trufflehog@3.90.12
-    - yamllint@1.37.1
+    - markdownlint@0.47.0
+    - prettier@3.8.1
+    - trufflehog@3.92.5
+    - yamllint@1.38.0
 plugins:
   sources:
     - id: trunk
-      ref: v1.7.3
+      ref: v1.7.4
       uri: https://github.com/trunk-io/plugins
 runtimes:
   enabled:
